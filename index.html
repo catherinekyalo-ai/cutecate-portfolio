@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catherine Ndanu Kyalo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #0f0f0f;
+        color: #fff;
+        scroll-behavior: smooth;
+      }
+
+      /* NAVIGATION */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(15, 15, 15, 0.95);
+        padding: 18px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid #a855f7;
+      }
+
+      nav .logo {
+        font-size: 22px;
+        font-weight: 700;
+        color: #a855f7;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav ul a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.3s;
+      }
+
+      nav ul a:hover {
+        color: #a855f7;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 100px 20px 60px;
+        background: radial-gradient(ellipse at top, #2d1b69 0%, #0f0f0f 70%);
+      }
+
+      .hero img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #a855f7;
+        box-shadow: 0 0 30px #a855f7;
+        margin-bottom: 25px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 12px;
+      }
+
+      .hero .tagline {
+        font-size: 20px;
+        color: #ccc;
+        margin-bottom: 8px;
+      }
+
+      .hero .emojis {
+        font-size: 18px;
+        color: #a855f7;
+        margin-top: 10px;
+      }
+
+      .hero .btn {
+        margin-top: 30px;
+        padding: 14px 35px;
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .hero .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #a855f7;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      section h2 {
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* ABOUT */
+      .about {
+        background-color: #141414;
+      }
+
+      .about .card {
+        background-color: #1e1e1e;
+        border: 1px solid #a855f7;
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 750px;
+        margin: 0 auto;
+        line-height: 1.9;
+        font-size: 17px;
+        color: #ddd;
+      }
+
+      /* SKILLS */
+      .skills {
+        background-color: #0f0f0f;
+      }
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .skill-badge {
+        background: linear-gradient(135deg, #a855f7, #ec4899);
+        color: white;
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        transition: transform 0.2s;
+      }
+
+      .skill-badge:hover {
+        transform: scale(1.08);
+      }
+
+      /* HOBBIES */
+      .hobbies {
+        background-color: #141414;
+      }
+
+      .hobbies-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hobby-card {
+        background-color: #1e1e1e;
+        border: 1px solid #a855f7;
+        border-radius: 16px;
+        padding: 25px 30px;
+        font-size: 18px;
+        width: 180px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .hobby-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+      }
+
+      .hobby-card .icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      /* PROJECTS */
+      .projects {
+        background-color: #0f0f0f;
+      }
+
+      .projects .card {
+        background-color: #1e1e1e;
+        border: 1px solid #ec4899;
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 17px;
+        color: #ddd;
+        line-height: 1.9;
+      }
+
+      .projects .card .rocket {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      /* CONTACT */
+      .contact {
+        background-color: #141414;
+      }
+
+      .contact-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .contact-card {
+        background-color: #1e1e1e;
+        border: 1px solid #a855f7;
+        border-radius: 16px;
+        padding: 25px 30px;
+        width: 200px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+      }
+
+      .contact-card .icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .contact-card a {
+        color: #a855f7;
+        text-decoration: none;
+        font-size: 15px;
+        word-break: break-all;
+      }
+
+      .contact-card a:hover {
+        text-decoration: underline;
+      }
+
+      .contact-card p {
+        color: #aaa;
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: #0a0a0a;
+        color: #888;
+        text-align: center;
+        padding: 25px;
+        border-top: 1px solid #a855f7;
+        font-size: 14px;
+      }
+
+      footer span {
+        color: #a855f7;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="logo">CK.</div>
+      <ul>
+        <a href="#about"><li>About</li></a>
+        <a href="#skills"><li>Skills</li></a>
+        <a href="#hobbies"><li>Hobbies</li></a>
+        <a href="#projects"><li>Projects</li></a>
+        <a href="#contact"><li>Contact</li></a>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <img src="photo.jpg" alt="Catherine Ndanu Kyalo" />
+      <h1>Catherine Ndanu Kyalo</h1>
+      <p class="tagline">Software Development Student at Moringa School</p>
+      <p class="emojis">💻 Tech Enthusiast &nbsp;|&nbsp; 🎵 Music Lover &nbsp;|&nbsp; 🚶 Walker</p>
+      <a href="#contact" class="btn">Get In Touch</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        Hi! I'm <strong>Catherine Ndanu Kyalo</strong>, a passionate software 
+        development student at <strong>Moringa School</strong>. I have a deep 
+        love for technology and enjoy interacting with machines to create 
+        something new and exciting. I believe every line of code is a step 
+        towards building a better, more connected world. I am driven by 
+        curiosity, creativity, and a strong desire to grow into a world-class 
+        software developer. 🌍
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-badge">HTML</div>
+        <div class="skill-badge">CSS</div>
+        <div class="skill-badge">JavaScript</div>
+        <div class="skill-badge">Git & GitHub</div>
+        <div class="skill-badge">Problem Solving</div>
+        <div class="skill-badge">Creative Thinking</div>
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section class="hobbies" id="hobbies">
+      <h2>My Hobbies</h2>
+      <div class="hobbies-grid">
+        <div class="hobby-card">
+          <div class="icon">🎵</div>
+          Listening to Music
+        </div>
+        <div class="hobby-card">
+          <div class="icon">🚶</div>
+          Walking
+        </div>
+        <div class="hobby-card">
+          <div class="icon">💻</div>
+          Exploring Tech
+        </div>
+        <div class="hobby-card">
+          <div class="icon">🌟</div>
+          Learning New Things
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <h2>My Projects</h2>
+      <div class="card">
+        <div class="rocket">🚀</div>
+        I am currently at the exciting beginning of my software development 
+        journey at Moringa School. While I am still building my very first 
+        projects, I have enormous dreams and I am looking forward to working 
+        on <strong>millions of amazing projects</strong> in the future. 
+        The best is yet to come — watch this space! ✨
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon">📧</div>
+          <p>Email</p>
+          <a href="mailto:kyalocatherine38@gmail.com">kyalocatherine38@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📸</div>
+          <p>Instagram</p>
+          <a href="https://instagram.com/cutecate" target="_blank">@cutecate</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📞</div>
+          <p>Phone</p>
+          <a href="tel:+254745888782">0745 888 782</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Made with ❤️ by <span>Catherine Ndanu Kyalo</span> &copy; 2026</p>
+    </footer>
+
+  </body>
+</html>
